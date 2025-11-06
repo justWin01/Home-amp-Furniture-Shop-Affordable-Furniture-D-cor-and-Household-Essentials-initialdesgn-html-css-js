@@ -3,87 +3,76 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Home & Furniture Shop — Modern Minimalist</title>
-  <meta name="description" content="Affordable furniture, décor, and household essentials — Modern & Minimalist theme" />
+  <title>Home & Furniture Shop — Natural & Cozy</title>
+  <meta name="description" content="Eco-friendly, rustic, and cozy furniture, décor, and household essentials — Natural & Cozy theme" />
   <style>
-    /* ---------- THEME COLORS (Modern & Minimalist) ---------- */
     :root{
-      --bg: #F5F5F5;       /* Primary background */
-      --panel: #EAEAEA;    /* Secondary surface */
-      --accent: #333333;   /* Charcoal */
-      --black: #000000;    /* Black */
-      --highlight: #D8B384;/* Warm Beige */
-      --gold: #C6A664;     /* Gold used sparingly */
-      --text: #222222;     /* Main text color */
-      --muted: #6b6b6b;
-      --glass: rgba(255,255,255,0.6);
+      --bg: #FAF9F6;       /* Warm white */
+      --panel: #FFF8E7;    /* Cream surface */
+      --accent: #708D81;   /* Olive green */
+      --terracotta: #C46A41;/* Terracotta */
+      --wood: #A47449;     /* Wood brown highlight */
+      --text: #3E2F1C;     /* Deep brown text */
+      --muted: #6f5f4e;
       --radius: 12px;
-      --shadow: 0 6px 18px rgba(0,0,0,0.08);
+      --shadow: 0 10px 24px rgba(58,46,33,0.06);
     }
 
-    /* ---------- GLOBAL ---------- */
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      font-family: 'Georgia', 'Merriweather', serif;
       background:var(--bg);
       color:var(--text);
+      line-height:1.5;
       -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
     }
 
-    /* ---------- LAYOUT ---------- */
-    .container{max-width:1200px;margin:0 auto;padding:24px}
-    header.top{
-      display:flex;align-items:center;justify-content:space-between;padding:18px 0;
-    }
-    .brand{display:flex;gap:14px;align-items:center}
-    .logo{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--panel),var(--glass));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);font-size:20px;box-shadow:var(--shadow)}
-    .brand h1{margin:0;font-size:18px;letter-spacing:0.2px}
-    nav.main{display:flex;gap:18px;align-items:center}
+    .container{max-width:1100px;margin:0 auto;padding:26px}
+    header.top{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--panel),#f7efe4);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--wood);font-size:20px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.03)}
+    .brand h1{margin:0;font-size:18px}
+    .brand .tag{font-size:12px;color:var(--muted)}
+
+    nav.main{display:flex;gap:16px;align-items:center}
     nav a{color:var(--muted);text-decoration:none;font-size:14px}
 
-    /* search + cart */
-    .controls{display:flex;gap:12px;align-items:center}
+    .controls{display:flex;gap:10px;align-items:center}
     .search{background:var(--panel);border-radius:999px;padding:8px 12px;display:flex;align-items:center;gap:8px;box-shadow:var(--shadow)}
-    .search input{border:0;background:transparent;outline:none;width:180px}
+    .search input{border:0;background:transparent;outline:none;width:180px;color:var(--text)}
     .btn{background:transparent;border:1px solid transparent;padding:10px 14px;border-radius:10px;cursor:pointer}
-    .btn.cart{background:linear-gradient(90deg,var(--highlight),var(--gold));color:var(--black);font-weight:600}
+    .btn.cart{background:linear-gradient(90deg,var(--wood),var(--terracotta));color:#fff;font-weight:600}
 
-    /* ---------- HERO ---------- */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:30px;align-items:center;margin:26px 0}
-    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.8),rgba(255,255,255,0.6));padding:28px;border-radius:18px;box-shadow:var(--shadow)}
-    .hero h2{margin:0 0 12px;font-size:34px}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin:22px 0}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,251,244,0.9));padding:28px;border-radius:16px;box-shadow:var(--shadow);border:1px solid rgba(160,125,90,0.06)}
+    .hero h2{margin:0 0 12px;font-size:30px}
     .hero p{margin:0 0 18px;color:var(--muted)}
-    .hero .cta{display:inline-block;padding:12px 18px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none}
+    .cta{display:inline-block;padding:12px 18px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none}
 
-    .hero-preview{padding:20px;border-radius:18px;background:linear-gradient(135deg,var(--panel),#fff);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;align-items:center}
-    .preview-img{width:100%;height:220px;border-radius:12px;background:linear-gradient(90deg,#fff,#eee);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted)}
+    .hero-preview{padding:20px;border-radius:14px;background:linear-gradient(135deg,#fff,#fcf8f0);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px;align-items:center}
+    .preview-img{width:100%;height:220px;border-radius:10px;background:linear-gradient(90deg,#fff,#f1eadf);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted)}
 
-    /* ---------- PRODUCT GRID ---------- */
     .section-title{display:flex;align-items:center;justify-content:space-between;margin:10px 0 14px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 
-    .card{background:#fff;border-radius:14px;padding:12px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
-    .card .img{height:180px;border-radius:10px;background:linear-gradient(90deg,#f8f8f8,#eee);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
+    .card{background:#fff;border-radius:12px;padding:12px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;border:1px solid rgba(0,0,0,0.03)}
+    .card .img{height:180px;border-radius:8px;background:linear-gradient(90deg,#fbf8f2,#efe7d9);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
     .card h3{margin:0;font-size:16px}
-    .price{font-weight:700;color:var(--accent)}
+    .price{font-weight:700;color:var(--wood)}
     .meta{display:flex;justify-content:space-between;align-items:center}
-    .card .add{padding:8px 10px;border-radius:10px;border:1px solid var(--panel);cursor:pointer}
+    .card .add{padding:8px 10px;border-radius:10px;border:1px solid rgba(0,0,0,0.04);cursor:pointer;background:transparent}
 
-    /* ---------- CART MODAL ---------- */
-    .cart-modal{position:fixed;right:20px;bottom:20px;width:360px;background:#fff;border-radius:14px;padding:12px;box-shadow:0 18px 40px rgba(0,0,0,0.12);display:none;flex-direction:column;gap:10px}
+    .cart-modal{position:fixed;right:20px;bottom:20px;width:360px;background:#fff;border-radius:14px;padding:12px;box-shadow:0 18px 40px rgba(50,40,30,0.12);display:none;flex-direction:column;gap:10px}
     .cart-modal.open{display:flex}
     .cart-items{max-height:220px;overflow:auto;display:flex;flex-direction:column;gap:8px}
     .cart-row{display:flex;gap:10px;align-items:center}
-    .cart-row img{width:56px;height:56px;border-radius:8px;background:#f0f0f0}
+    .cart-row img{width:56px;height:56px;border-radius:8px;background:#f7efe4}
     .cart-footer{display:flex;justify-content:space-between;align-items:center}
 
-    /* ---------- RESPONSIVE ---------- */
     @media (max-width:980px){
-      .hero{grid-template-columns:1fr;}
+      .hero{grid-template-columns:1fr}
       .grid{grid-template-columns:repeat(2,1fr)}
     }
     @media (max-width:600px){
@@ -91,11 +80,10 @@
       nav.main{display:none}
       .grid{grid-template-columns:1fr}
       .search input{width:110px}
-      .hero h2{font-size:24px}
+      .hero h2{font-size:22px}
       .cart-modal{right:12px;left:12px;width:auto}
     }
 
-    /* small helper */
     .muted{color:var(--muted);font-size:13px}
     .pill{background:var(--panel);padding:6px 10px;border-radius:999px;font-size:13px}
   </style>
@@ -104,66 +92,63 @@
   <div class="container">
     <header class="top">
       <div class="brand">
-        <div class="logo">HF</div>
+        <div class="logo">HC</div>
         <div>
-          <h1>Home & Furniture</h1>
-          <div class="muted" style="font-size:12px">Affordable Furniture, Décor & Household Essentials</div>
+          <h1>Home & Cozy</h1>
+          <div class="tag">Eco-friendly, rustic & comfortable</div>
         </div>
       </div>
 
       <nav class="main">
         <a href="#">Home</a>
         <a href="#">Shop</a>
-        <a href="#">About</a>
+        <a href="#">Sustainability</a>
         <a href="#">Contact</a>
       </nav>
 
       <div class="controls">
         <div class="search" role="search">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M21 21l-4.35-4.35" stroke="#6b6b6b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <input id="searchInput" placeholder="Search modern sofas, lamps..." />
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M21 21l-4.35-4.35" stroke="#6f5f4e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <input id="searchInput" placeholder="Search rattan chairs, wool rugs..." />
         </div>
-        <button class="btn" id="themeBtn" title="Toggle theme">🌓</button>
+        <button class="btn" id="themeBtn" title="Toggle theme">🌤️</button>
         <button class="btn cart" id="openCartBtn">Cart (<span id="cartCount">0</span>)</button>
       </div>
     </header>
 
     <section class="hero">
       <div class="hero-card">
-        <h2>Modern & Minimalist furniture for every home</h2>
-        <p>Curated collection of affordable sofas, tables, lighting and décor. Clean lines, warm accents — designed to last.</p>
-        <a class="cta" href="#products">Shop Bestsellers</a>
+        <h2>Natural materials, cozy living</h2>
+        <p>Handpicked eco-friendly pieces that bring warmth and texture to your home — from rattan seating to wool rugs.</p>
+        <a class="cta" href="#products">Shop Natural Picks</a>
         <div style="margin-top:18px;display:flex;gap:8px;flex-wrap:wrap">
-          <div class="pill">Free shipping over ₱5,000</div>
-          <div class="pill">30-day returns</div>
-          <div class="pill">Price match guarantee</div>
+          <div class="pill">Sustainably sourced</div>
+          <div class="pill">Handmade options</div>
+          <div class="pill">Carbon-neutral shipping</div>
         </div>
       </div>
 
       <div class="hero-preview">
-        <div class="preview-img">Featured: "Olive" Lounge Chair</div>
-        <div class="muted">Handpicked — warm beige finish with charcoal legs</div>
+        <div class="preview-img">Featured: "Briar" Rattan Armchair</div>
+        <div class="muted">Rounded frame, oiled walnut finish</div>
         <div style="display:flex;gap:10px;margin-top:12px">
-          <div style="flex:1;background:linear-gradient(90deg,#fff,#fafafa);padding:12px;border-radius:10px;">Quality materials</div>
-          <div style="flex:1;background:linear-gradient(90deg,#fff,#fafafa);padding:12px;border-radius:10px;">Fast delivery</div>
+          <div style="flex:1;background:linear-gradient(90deg,#fff,#fbf6ec);padding:12px;border-radius:10px;">Natural fibers</div>
+          <div style="flex:1;background:linear-gradient(90deg,#fff,#fbf6ec);padding:12px;border-radius:10px;">Locally made</div>
         </div>
       </div>
     </section>
 
     <section id="products">
       <div class="section-title">
-        <h3 style="margin:0">Bestsellers</h3>
-        <div class="muted">Showing curated picks for Modern & Minimalist</div>
+        <h3 style="margin:0">Cozy Collection</h3>
+        <div class="muted">Warm, earthy pieces for every corner</div>
       </div>
 
-      <div class="grid" id="productGrid">
-        <!-- Product cards generated by JavaScript -->
-      </div>
+      <div class="grid" id="productGrid"></div>
     </section>
 
   </div>
 
-  <!-- Cart modal -->
   <aside class="cart-modal" id="cartModal" aria-hidden="true">
     <div style="display:flex;justify-content:space-between;align-items:center">
       <strong>Your Cart</strong>
@@ -180,297 +165,13 @@
   </aside>
 
   <script>
-    /* ---------- OOP JavaScript Implementation ---------- */
+    class Product { constructor(id,title,price,category,img=null,desc=''){ this.id=id; this.title=title; this.price=Number(price); this.category=category; this.img=img; this.desc=desc; } }
+    class CartItem { constructor(product,qty=1){ this.product=product; this.qty=qty } get subtotal(){ return this.product.price * this.qty } }
+    class Cart { constructor(){ this.items=[]; this.load(); } add(product,qty=1){ const f=this.items.find(i=>i.product.id===product.id); if(f) f.qty+=qty; else this.items.push(new CartItem(product,qty)); this.save(); } remove(pid){ this.items=this.items.filter(i=>i.product.id!==pid); this.save(); } updateQty(pid,qty){ const it=this.items.find(i=>i.product.id===pid); if(it){ it.qty=Math.max(0,qty); if(it.qty===0) this.remove(pid); this.save(); } } clear(){ this.items=[]; this.save(); } get count(){ return this.items.reduce((s,i)=>s+i.qty,0) } get total(){ return this.items.reduce((s,i)=>s+i.subtotal,0) } save(){ try{ localStorage.setItem('hc_cart', JSON.stringify(this.items.map(i=>({id:i.product.id,qty:i.qty})))); }catch(e){} App.ui.renderCart(); } load(){ try{ const raw=localStorage.getItem('hc_cart'); if(raw){ const parsed=JSON.parse(raw); this.items=parsed.map(si=>{ const prod=App.products.find(p=>p.id===si.id); if(prod) return new CartItem(prod,si.qty); return null }).filter(Boolean); } }catch(e){} } }
+    class ProductList{ constructor(products=[]){ this.products=products } search(q){ q=q.trim().toLowerCase(); if(!q) return this.products; return this.products.filter(p=>(p.title+' '+p.desc+' '+p.category).toLowerCase().includes(q)); } }
+    class UI{ constructor(){ this.grid=document.getElementById('productGrid'); this.cartModal=document.getElementById('cartModal'); this.cartItemsEl=document.getElementById('cartItems'); this.cartTotalEl=document.getElementById('cartTotal'); this.cartCountEl=document.getElementById('cartCount'); } renderProducts(products){ this.grid.innerHTML=''; products.forEach(p=>this.grid.appendChild(this.createCard(p))); } createCard(product){ const el=document.createElement('article'); el.className='card'; const img=document.createElement('div'); img.className='img'; img.textContent=product.title; const title=document.createElement('h3'); title.textContent=product.title; const desc=document.createElement('div'); desc.className='muted'; desc.textContent=product.desc||product.category; const meta=document.createElement('div'); meta.className='meta'; const price=document.createElement('div'); price.className='price'; price.textContent='₱'+product.price.toFixed(2); const add=document.createElement('button'); add.className='add'; add.textContent='Add to cart'; add.addEventListener('click', ()=>{ App.cart.add(product,1); this.flash(add,'Added') }); meta.appendChild(price); meta.appendChild(add); el.appendChild(img); el.appendChild(title); el.appendChild(desc); el.appendChild(meta); return el; } flash(el,t){ const old=el.textContent; el.textContent=t; setTimeout(()=>el.textContent=old,900); } renderCart(){ const cart=App.cart; this.cartItemsEl.innerHTML=''; if(cart.items.length===0){ const empt=document.createElement('div'); empt.className='muted'; empt.textContent='Your cart is empty — find something cozy!'; this.cartItemsEl.appendChild(empt); } else { cart.items.forEach(ci=>{ const row=document.createElement('div'); row.className='cart-row'; const img=document.createElement('img'); img.alt=ci.product.title; const info=document.createElement('div'); info.style.flex='1'; info.innerHTML=`<div style="font-weight:600">${ci.product.title}</div><div class="muted">₱${ci.product.price.toFixed(2)}</div>`; const qty=document.createElement('input'); qty.type='number'; qty.min=0; qty.value=ci.qty; qty.style.width='64px'; qty.addEventListener('change', ()=> App.cart.updateQty(ci.product.id, Number(qty.value))); const rem=document.createElement('button'); rem.className='btn'; rem.textContent='Remove'; rem.addEventListener('click', ()=> App.cart.remove(ci.product.id)); row.appendChild(img); row.appendChild(info); row.appendChild(qty); row.appendChild(rem); this.cartItemsEl.appendChild(row); }); } this.cartTotalEl.textContent='₱'+App.cart.total.toFixed(2); this.cartCountEl.textContent=App.cart.count; } openCart(){ this.cartModal.classList.add('open'); this.cartModal.setAttribute('aria-hidden','false'); } closeCart(){ this.cartModal.classList.remove('open'); this.cartModal.setAttribute('aria-hidden','true'); } }
 
-    // Product model
-    class Product {
-      constructor(id, title, price, category, img = null, desc = ''){
-        this.id = id;
-        this.title = title;
-        this.price = Number(price);
-        this.category = category;
-        this.img = img; // image url or null
-        this.desc = desc;
-      }
-    }
-
-    // Cart item model
-    class CartItem {
-      constructor(product, qty = 1){
-        this.product = product;
-        this.qty = qty;
-      }
-      get subtotal(){
-        return this.product.price * this.qty;
-      }
-    }
-
-    // Cart class responsible for state & persistence
-    class Cart {
-      constructor(){
-        this.items = []; // array of CartItem
-        this.load();
-      }
-
-      add(product, qty = 1){
-        const found = this.items.find(i => i.product.id === product.id);
-        if(found){
-          found.qty += qty;
-        } else {
-          this.items.push(new CartItem(product, qty));
-        }
-        this.save();
-      }
-
-      remove(productId){
-        this.items = this.items.filter(i => i.product.id !== productId);
-        this.save();
-      }
-
-      updateQty(productId, qty){
-        const it = this.items.find(i => i.product.id === productId);
-        if(it){
-          it.qty = Math.max(0, qty);
-          if(it.qty === 0) this.remove(productId);
-          this.save();
-        }
-      }
-
-      clear(){
-        this.items = [];
-        this.save();
-      }
-
-      get count(){
-        return this.items.reduce((s,i)=>s + i.qty, 0);
-      }
-
-      get total(){
-        return this.items.reduce((s,i)=>s + i.subtotal, 0);
-      }
-
-      save(){
-        try{ localStorage.setItem('hf_cart', JSON.stringify(this.items.map(i=>({id:i.product.id, qty:i.qty})))); }
-        catch(e){console.warn('Storage failed', e)}
-        App.ui.renderCart();
-      }
-
-      load(){
-        try{
-          const raw = localStorage.getItem('hf_cart');
-          if(raw){
-            const parsed = JSON.parse(raw);
-            // map saved items back to product objects if available
-            this.items = parsed.map(si => {
-              const prod = App.products.find(p => p.id === si.id);
-              if(prod) return new CartItem(prod, si.qty);
-              return null;
-            }).filter(Boolean);
-          }
-        }catch(e){console.warn('Failed to load cart', e)}
-      }
-    }
-
-    // ProductList class holds available products
-    class ProductList {
-      constructor(products = []){
-        this.products = products;
-      }
-
-      search(q){
-        q = q.trim().toLowerCase();
-        if(!q) return this.products;
-        return this.products.filter(p => (p.title + ' ' + p.desc + ' ' + p.category).toLowerCase().includes(q));
-      }
-    }
-
-    // UI class handles DOM rendering
-    class UI {
-      constructor(){
-        this.grid = document.getElementById('productGrid');
-        this.cartModal = document.getElementById('cartModal');
-        this.cartItemsEl = document.getElementById('cartItems');
-        this.cartTotalEl = document.getElementById('cartTotal');
-        this.cartCountEl = document.getElementById('cartCount');
-      }
-
-      renderProducts(products){
-        this.grid.innerHTML = '';
-        products.forEach(p => this.grid.appendChild(this.createCard(p)));
-      }
-
-      createCard(product){
-        const el = document.createElement('article');
-        el.className = 'card';
-
-        const img = document.createElement('div');
-        img.className = 'img';
-        img.textContent = product.title;
-
-        const title = document.createElement('h3');
-        title.textContent = product.title;
-
-        const desc = document.createElement('div');
-        desc.className = 'muted';
-        desc.textContent = product.desc || product.category;
-
-        const meta = document.createElement('div');
-        meta.className = 'meta';
-
-        const price = document.createElement('div');
-        price.className = 'price';
-        price.textContent = '₱' + product.price.toFixed(2);
-
-        const add = document.createElement('button');
-        add.className = 'add';
-        add.textContent = 'Add to cart';
-        add.addEventListener('click', ()=>{ App.cart.add(product,1); this.flashFeedback(add,'Added'); });
-
-        meta.appendChild(price);
-        meta.appendChild(add);
-
-        el.appendChild(img);
-        el.appendChild(title);
-        el.appendChild(desc);
-        el.appendChild(meta);
-
-        return el;
-      }
-
-      flashFeedback(el, text){
-        const old = el.textContent;
-        el.textContent = text;
-        setTimeout(()=> el.textContent = old, 900);
-      }
-
-      renderCart(){
-        const cart = App.cart;
-        this.cartItemsEl.innerHTML = '';
-        if(cart.items.length === 0){
-          const empt = document.createElement('div');
-          empt.className = 'muted';
-          empt.textContent = 'Your cart is empty. Add something nice!';
-          this.cartItemsEl.appendChild(empt);
-        } else {
-          cart.items.forEach(ci => {
-            const row = document.createElement('div');
-            row.className = 'cart-row';
-
-            const img = document.createElement('img');
-            img.alt = ci.product.title;
-
-            const info = document.createElement('div');
-            info.style.flex = '1';
-            info.innerHTML = `<div style="font-weight:600">${ci.product.title}</div><div class="muted">₱${ci.product.price.toFixed(2)}</div>`;
-
-            const qty = document.createElement('input');
-            qty.type = 'number';
-            qty.min = 0;
-            qty.value = ci.qty;
-            qty.style.width = '64px';
-            qty.addEventListener('change', ()=> App.cart.updateQty(ci.product.id, Number(qty.value)));
-
-            const rem = document.createElement('button');
-            rem.className = 'btn';
-            rem.textContent = 'Remove';
-            rem.addEventListener('click', ()=> App.cart.remove(ci.product.id));
-
-            row.appendChild(img);
-            row.appendChild(info);
-            row.appendChild(qty);
-            row.appendChild(rem);
-
-            this.cartItemsEl.appendChild(row);
-          });
-        }
-
-        this.cartTotalEl.textContent = '₱' + App.cart.total.toFixed(2);
-        this.cartCountEl.textContent = App.cart.count;
-      }
-
-      openCart(){
-        this.cartModal.classList.add('open');
-        this.cartModal.setAttribute('aria-hidden','false');
-      }
-      closeCart(){
-        this.cartModal.classList.remove('open');
-        this.cartModal.setAttribute('aria-hidden','true');
-      }
-    }
-
-    // Small App namespace to glue models + UI
-    const App = {
-      products: [],
-      productList: null,
-      cart: null,
-      ui: null,
-
-      init(){
-        // sample product data (in a real app this would come from an API)
-        this.products = [
-          new Product('p1','Olive Lounge Chair',8990,'Seating','', 'Warm beige fabric with charcoal legs'),
-          new Product('p2','Elm Coffee Table',4590,'Tables','', 'Rounded oak table, compact size'),
-          new Product('p3','Mira Floor Lamp',2490,'Lighting','', 'Tall minimalist lamp with linen shade'),
-          new Product('p4','Haven 3-Seater Sofa',24990,'Seating','', 'Low-profile sofa with removable covers'),
-          new Product('p5','Nordic Shelving Unit',5990,'Storage','', 'Open shelving with metal frame'),
-          new Product('p6','Linen Throw Pillow (Set of 2)',790,'Textiles','', 'Soft pillow set in warm beige')
-        ];
-
-        this.productList = new ProductList(this.products);
-        this.cart = new Cart();
-        this.ui = new UI();
-
-        // initial render
-        this.ui.renderProducts(this.products);
-        this.ui.renderCart();
-
-        // wire up controls
-        document.getElementById('openCartBtn').addEventListener('click', ()=> this.ui.openCart());
-        document.getElementById('closeCartBtn').addEventListener('click', ()=> this.ui.closeCart());
-        document.getElementById('clearCartBtn').addEventListener('click', ()=>{ this.cart.clear(); });
-        document.getElementById('checkoutBtn').addEventListener('click', ()=> this.checkout());
-
-        document.getElementById('searchInput').addEventListener('input', (e)=>{
-          const q = e.target.value;
-          const found = this.productList.search(q);
-          this.ui.renderProducts(found);
-        });
-
-        document.getElementById('themeBtn').addEventListener('click', ()=> this.toggleTheme());
-
-        // simple keyboard shortcut: 'c' opens cart
-        window.addEventListener('keydown', (e)=>{ if(e.key === 'c') this.ui.openCart(); });
-      },
-
-      toggleTheme(){
-        // a light/dark inversion for quick demo
-        const root = document.documentElement;
-        if(root.style.getPropertyValue('--bg') === '#F5F5F5'){
-          root.style.setProperty('--bg','#111111');
-          root.style.setProperty('--text','#eaeaea');
-          root.style.setProperty('--panel','#1a1a1a');
-          root.style.setProperty('--muted','#9a9a9a');
-          root.style.setProperty('--accent','#ffffff');
-        } else {
-          root.style.setProperty('--bg','#F5F5F5');
-          root.style.setProperty('--text','#222222');
-          root.style.setProperty('--panel','#EAEAEA');
-          root.style.setProperty('--muted','#6b6b6b');
-          root.style.setProperty('--accent','#333333');
-        }
-      },
-
-      checkout(){
-        if(this.cart.items.length === 0){ alert('Your cart is empty.'); return; }
-        // lightweight demo checkout
-        const names = this.cart.items.map(i=> i.product.title + ' x' + i.qty).join('\n');
-        alert('Checkout - Order summary:\n\n' + names + '\n\nTotal: ₱' + this.cart.total.toFixed(2));
-        this.cart.clear();
-        this.ui.closeCart();
-      }
-    };
-
-    // initialize app
+    const App = { products: [], productList: null, cart: null, ui: null, init(){ this.products=[ new Product('n1','Briar Rattan Armchair',6990,'Seating','','Handwoven rattan with cushioned seat'), new Product('n2','Hearth Wool Rug (5x7)',5490,'Textiles','','Thick, hand-tufted wool rug'), new Product('n3','Willow Side Table',2890,'Tables','','Solid wood with oiled finish'), new Product('n4','Cedar Bed Frame (Queen)',17990,'Bedroom','','Kiln-dried cedar, natural finish'), new Product('n5','Kinsley Pendant Lamp',3290,'Lighting','','Paper shade with soft warm light'), new Product('n6','Loom Throw Blanket',1290,'Textiles','','Organic cotton weave, warm cream') ]; this.productList=new ProductList(this.products); this.cart=new Cart(); this.ui=new UI(); this.ui.renderProducts(this.products); this.ui.renderCart(); document.getElementById('openCartBtn').addEventListener('click', ()=> this.ui.openCart()); document.getElementById('closeCartBtn').addEventListener('click', ()=> this.ui.closeCart()); document.getElementById('clearCartBtn').addEventListener('click', ()=>{ this.cart.clear(); }); document.getElementById('checkoutBtn').addEventListener('click', ()=> this.checkout()); document.getElementById('searchInput').addEventListener('input', (e)=>{ const q=e.target.value; const found=this.productList.search(q); this.ui.renderProducts(found); }); document.getElementById('themeBtn').addEventListener('click', ()=> this.toggleTheme()); window.addEventListener('keydown', (e)=>{ if(e.key==='c') this.ui.openCart(); }); }, toggleTheme(){ const root=document.documentElement; if(root.style.getPropertyValue('--bg')==='#FAF9F6'){ root.style.setProperty('--bg','#2b2b2b'); root.style.setProperty('--panel','#1f1f1f'); root.style.setProperty('--text','#f3efea'); root.style.setProperty('--muted','#bfb6ad'); root.style.setProperty('--accent','#8aa79d'); } else { root.style.setProperty('--bg','#FAF9F6'); root.style.setProperty('--panel','#FFF8E7'); root.style.setProperty('--text','#3E2F1C'); root.style.setProperty('--muted','#6f5f4e'); root.style.setProperty('--accent','#708D81'); } }, checkout(){ if(this.cart.items.length===0){ alert('Your cart is empty.'); return;} const names=this.cart.items.map(i=> i.product.title + ' x' + i.qty).join('\n'); alert('Checkout - Order summary:\n\n' + names + '\n\nTotal: ₱' + this.cart.total.toFixed(2)); this.cart.clear(); this.ui.closeCart(); } };
     document.addEventListener('DOMContentLoaded', ()=> App.init());
   </script>
 </body>
