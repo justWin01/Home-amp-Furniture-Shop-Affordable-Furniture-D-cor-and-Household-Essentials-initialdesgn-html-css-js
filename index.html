@@ -1,193 +1,396 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home & Furniture Shop – Warm & Inviting</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Home & Furniture Shop — Affordable Furniture, Décor & Essentials</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #FFF5E6;
-      color: #444444;
-    }
-    header {
-      background-color: #D97742;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    header h1 {
-      font-size: 1.8rem;
-      margin: 0;
-    }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .hero {
-      background-color: #B88E6A;
-      color: white;
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-    }
-    .card {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .card h3 {
-      margin: 1rem 0 0.5rem;
-      color: #D97742;
-    }
-    .card p {
-      margin: 0 1rem 1rem;
-      font-size: 0.9rem;
-    }
-    .card button {
-      background-color: #D97742;
-      border: none;
-      color: white;
-      padding: 0.5rem 1.5rem;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-bottom: 1rem;
-    }
-    .card button:hover {
-      background-color: #B86A34;
-    }
-    footer {
-      background-color: #D97742;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
+    :root{--bg:#fff8f2;--card:#ffffff;--muted:#6b6b6b;--accent:#b06b3a;--accent-2:#f2c9a0}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;background:var(--bg);color:#222}
+    header{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:50%;background:#fff3ea;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);box-shadow:0 4px 10px rgba(0,0,0,.08)}
+    nav{display:flex;gap:12px;align-items:center}
+    nav button{background:transparent;border:1px solid rgba(255,255,255,.18);color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer}
+    .controls{display:flex;gap:8px;align-items:center}
+
+    .container{max-width:1100px;margin:28px auto;padding:0 20px}
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:20px;align-items:center;margin-bottom:20px}
+    .hero-card{background:var(--card);padding:24px;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,.05)}
+    .hero h1{margin:0 0 10px;font-size:26px}
+    .hero p{margin:0 0 14px;color:var(--muted)}
+    .searchbar{display:flex;gap:8px}
+    .searchbar input, .searchbar select{padding:10px;border-radius:10px;border:1px solid #eee;flex:1}
+    .searchbar button{padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+
+    .grid-wrap{display:grid;grid-template-columns:250px 1fr;gap:18px}
+    .filters{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 14px rgba(0,0,0,.04)}
+    .filters h4{margin:0 0 10px}
+    .filters label{display:block;margin-bottom:8px;color:var(--muted)}
+    .catalog{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+
+    .product{background:var(--card);border-radius:12px;padding:12px;box-shadow:0 6px 10px rgba(0,0,0,.04);display:flex;flex-direction:column}
+    .img{height:140px;border-radius:10px;background:#f6f3f1;display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--muted)}
+    .pname{font-weight:600;margin:10px 0 4px}
+    .pmeta{color:var(--muted);font-size:13px;margin-bottom:10px}
+    .price{font-weight:700;margin-top:auto}
+    .pc-actions{display:flex;gap:8px;margin-top:10px}
+    .btn{padding:8px 10px;border-radius:8px;border:0;cursor:pointer}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-ghost{background:transparent;border:1px solid #eee}
+
+    .panel{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 14px rgba(0,0,0,.04)}
+    .orders-list .order{border-bottom:1px dashed #eee;padding:10px 0}
+
+    footer{text-align:center;padding:22px 12px;color:var(--muted)}
+
+    /* responsive */
+    @media(max-width:900px){.hero{grid-template-columns:1fr}.grid-wrap{grid-template-columns:1fr}.brand .logo{width:46px;height:46px}}
   </style>
 </head>
 <body>
   <header>
-    <h1>Warm & Inviting Furniture</h1>
+    <div class="brand">
+      <div class="logo">HF</div>
+      <div>
+        <div style="font-weight:700">Home &amp; Furniture Shop</div>
+        <div style="font-size:12px;opacity:.9">Affordable furniture, décor &amp; essentials</div>
+      </div>
+    </div>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Shop</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+      <div class="controls">
+        <button id="btn-account">Login / Register</button>
+        <button id="btn-orders">Orders</button>
+        <select id="role-sim" title="Simulate role">
+          <option value="customer">Customer view</option>
+          <option value="admin">Admin view</option>
+        </select>
+      </div>
     </nav>
   </header>
 
-  <section class="hero">
-    <h2>Bring Warmth Home</h2>
-    <p>Discover our collection of cozy and family-inspired furniture.</p>
-  </section>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Make your house feel like home — without breaking the bank</h1>
+        <p>Shop curated furniture, cosy décor, and everyday essentials. Use search and filters to find what you need fast.</p>
 
-  <section class="products" id="product-list"></section>
+        <div class="searchbar" role="search">
+          <input id="search-input" placeholder="Search products by name...">
+          <select id="category-filter"><option value="">All categories</option></select>
+          <button id="btn-search">Search</button>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <select id="sort-by"><option value="new">Sort: Newest</option><option value="price-asc">Price: Low → High</option><option value="price-desc">Price: High → Low</option></select>
+          <input id="price-min" placeholder="Min" style="width:80px">
+          <input id="price-max" placeholder="Max" style="width:80px">
+          <button id="btn-clear" class="btn btn-ghost">Clear</button>
+        </div>
+      </div>
+
+      <aside class="panel" style="height:100%">
+        <h3 style="margin-top:0">Your Cart</h3>
+        <div id="cart-list">No items yet.</div>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <button id="btn-checkout" class="btn btn-primary">Checkout</button>
+          <button id="btn-empty" class="btn btn-ghost">Empty</button>
+        </div>
+        <hr style="margin:12px 0">
+        <div id="admin-controls" style="display:none">
+          <h4>Admin Panel</h4>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <input id="new-name" placeholder="product name">
+            <input id="new-price" placeholder="price" style="width:80px">
+          </div>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <select id="new-cat"><option>Furniture</option><option>Décor</option><option>Essentials</option></select>
+            <button id="btn-add-product" class="btn btn-primary">Add product</button>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="grid-wrap">
+      <aside class="filters">
+        <h4>Filters</h4>
+        <label>Category
+          <select id="left-category"><option value="">All</option></select>
+        </label>
+        <label>Price range
+          <div style="display:flex;gap:8px"><input id="left-min" placeholder="min" style="width:100%"><input id="left-max" placeholder="max" style="width:100%"></div>
+        </label>
+        <label>Keywords
+          <input id="left-key" placeholder="e.g. sofa, lamp">
+        </label>
+        <div style="margin-top:10px;display:flex;gap:8px"><button id="apply-filter" class="btn btn-primary">Apply</button><button id="reset-filter" class="btn btn-ghost">Reset</button></div>
+      </aside>
+
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <h3 style="margin:0">Products</h3>
+          <div style="color:var(--muted);font-size:14px" id="result-count">0 items</div>
+        </div>
+
+        <div class="catalog" id="catalog"></div>
+      </div>
+    </section>
+
+    <section style="margin-top:20px;display:grid;grid-template-columns:1fr 320px;gap:18px">
+      <div class="panel orders-list" id="orders-panel">
+        <h4>Order Management</h4>
+        <p style="margin-top:0;color:var(--muted)">Customers can view order status. Admins may update or cancel orders.</p>
+        <div id="orders"></div>
+      </div>
+
+      <aside class="panel">
+        <h4>About</h4>
+        <p style="color:var(--muted);margin-top:6px">This demo shows front-end implementations of core features: account UI, role-based admin controls, searchable catalog, filters, and a simple orders view. Connect to a backend to persist accounts, products and orders.</p>
+      </aside>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Warm & Inviting Furniture. All rights reserved.</p>
+    © <span id="yr"></span> Home &amp; Furniture Shop — Affordable Furniture, Décor &amp; Essentials
   </footer>
 
+  <!-- Login/Register Modal (simple front-end mock) -->
+  <div id="modal" style="position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:20px">
+    <div style="width:420px;background:#fff;padding:18px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.35)">
+      <h3 id="modal-title">Login</h3>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <input id="email" placeholder="email" style="flex:1;padding:10px;border-radius:8px;border:1px solid #eee">
+      </div>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <input id="password" placeholder="password" type="password" style="flex:1;padding:10px;border-radius:8px;border:1px solid #eee">
+      </div>
+      <div style="display:flex;gap:8px;margin-top:12px;justify-content:flex-end">
+        <button id="switch-to-register" class="btn btn-ghost">Register</button>
+        <button id="modal-close" class="btn btn-ghost">Close</button>
+        <button id="modal-do" class="btn btn-primary">Login</button>
+      </div>
+      <div id="modal-msg" style="color:red;margin-top:8px;min-height:18px"></div>
+    </div>
+  </div>
+
   <script>
-    class Product {
-      constructor(id, name, price, image, description) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.image = image;
-        this.description = description;
+    // Basic demo data and state (front-end only)
+    const products = [
+      {id:1,name:'Oak Wood Dining Table',category:'Furniture',price:299,desc:'Solid oak table fits 6.'},
+      {id:2,name:'Comfort Sofa (3-seater)',category:'Furniture',price:449,desc:'Cozy and durable fabric.'},
+      {id:3,name:'Woven Area Rug',category:'Décor',price:79,desc:'Adds warmth to any room.'},
+      {id:4,name:'Ceramic Table Lamp',category:'Décor',price:39,desc:'Soft warm lighting.'},
+      {id:5,name:'Everyday Dish Set (12pc)',category:'Essentials',price:49,desc:'Microwave and dishwasher safe.'},
+      {id:6,name:'Bamboo Cutting Board',category:'Essentials',price:19,desc:'Antimicrobial surface.'}
+    ];
+
+    let state = {
+      user: null, // {email,role:'customer'|'admin'} — front-end only
+      cart: [],
+      orders: []
+    }
+
+    // render helpers
+    const catalogEl = document.getElementById('catalog');
+    const categories = [...new Set(products.map(p=>p.category))];
+    const categoryFilter = document.getElementById('category-filter');
+    const leftCategory = document.getElementById('left-category');
+    const newCat = document.getElementById('new-cat');
+    [categoryFilter,leftCategory].forEach(sel=>{
+      categories.forEach(c=>{ const o=document.createElement('option'); o.value=c; o.textContent=c; sel.appendChild(o)});
+    });
+    categories.forEach(c=>{ const o=document.createElement('option'); o.textContent=c; newCat.appendChild(o) });
+
+    function renderProducts(list){
+      catalogEl.innerHTML='';
+      if(!list.length) catalogEl.innerHTML='<div style="grid-column:1/-1;color:var(--muted)">No products found.</div>';
+      list.forEach(p=>{
+        const el=document.createElement('div'); el.className='product';
+        el.innerHTML = `
+          <div class="img">${p.name.split(' ')[0]}</div>
+          <div class="pname">${p.name}</div>
+          <div class="pmeta">${p.category} • ${p.desc}</div>
+          <div class="price">₱${p.price.toFixed(2)}</div>
+          <div class="pc-actions">
+            <button class="btn btn-primary" data-add="${p.id}">Add to cart</button>
+            <button class="btn btn-ghost" data-view="${p.id}">View</button>
+          </div>`;
+        catalogEl.appendChild(el);
+      });
+      document.getElementById('result-count').textContent = list.length + ' items';
+    }
+
+    // initial render
+    renderProducts(products);
+
+    // search & filter
+    function getFilters(){
+      return {
+        q: document.getElementById('search-input').value.trim().toLowerCase(),
+        category: document.getElementById('category-filter').value,
+        min: parseFloat(document.getElementById('price-min').value)||null,
+        max: parseFloat(document.getElementById('price-max').value)||null,
+        sort: document.getElementById('sort-by').value
       }
     }
 
-    class CartItem {
-      constructor(product, quantity = 1) {
-        this.product = product;
-        this.quantity = quantity;
-      }
+    function applyFilters(){
+      const f = getFilters();
+      let out = products.filter(p=>{
+        if(f.q && !p.name.toLowerCase().includes(f.q) && !p.desc.toLowerCase().includes(f.q)) return false;
+        if(f.category && p.category!==f.category) return false;
+        if(f.min!==null && p.price < f.min) return false;
+        if(f.max!==null && p.price > f.max) return false;
+        return true;
+      });
+      if(f.sort==='price-asc') out.sort((a,b)=>a.price-b.price);
+      if(f.sort==='price-desc') out.sort((a,b)=>b.price-a.price);
+      renderProducts(out);
     }
 
-    class Cart {
-      constructor() {
-        this.items = JSON.parse(localStorage.getItem('cart')) || [];
-      }
+    document.getElementById('btn-search').addEventListener('click',applyFilters);
+    document.getElementById('btn-clear').addEventListener('click',()=>{document.getElementById('search-input').value='';document.getElementById('price-min').value='';document.getElementById('price-max').value='';document.getElementById('sort-by').value='new';applyFilters()});
 
-      addProduct(product) {
-        const existing = this.items.find(item => item.product.id === product.id);
-        if (existing) {
-          existing.quantity++;
-        } else {
-          this.items.push(new CartItem(product));
+    document.getElementById('apply-filter').addEventListener('click',()=>{
+      document.getElementById('category-filter').value = document.getElementById('left-category').value;
+      document.getElementById('price-min').value = document.getElementById('left-min').value;
+      document.getElementById('price-max').value = document.getElementById('left-max').value;
+      document.getElementById('search-input').value = document.getElementById('left-key').value;
+      applyFilters();
+    });
+    document.getElementById('reset-filter').addEventListener('click',()=>{['left-category','left-min','left-max','left-key'].forEach(id=>document.getElementById(id).value='');applyFilters()});
+
+    // cart handling
+    function renderCart(){
+      const el=document.getElementById('cart-list');
+      if(!state.cart.length){el.innerHTML='No items yet.'; return}
+      el.innerHTML='';
+      state.cart.forEach(item=>{
+        const p = products.find(pp=>pp.id===item.id);
+        const d = document.createElement('div'); d.style.display='flex'; d.style.justifyContent='space-between'; d.style.alignItems='center'; d.style.marginBottom='8px';
+        d.innerHTML = `<div>${p.name} <small style="color:var(--muted)">x${item.qty}</small></div><div>₱${(p.price*item.qty).toFixed(2)} <button data-remove="${p.id}" style="margin-left:8px" class="btn btn-ghost">Remove</button></div>`;
+        el.appendChild(d);
+      })
+    }
+
+    document.body.addEventListener('click',e=>{
+      if(e.target.matches('[data-add]')){
+        const id = +e.target.getAttribute('data-add');
+        const found = state.cart.find(c=>c.id===id);
+        if(found) found.qty +=1; else state.cart.push({id,qty:1});
+        renderCart();
+      }
+      if(e.target.matches('[data-remove]')){
+        const id = +e.target.getAttribute('data-remove'); state.cart = state.cart.filter(c=>c.id!==id); renderCart();
+      }
+      if(e.target.matches('[data-view]')){
+        const id = +e.target.getAttribute('data-view'); const p = products.find(pp=>pp.id===id); alert(p.name + '\n\n' + p.desc + '\nPrice: ₱' + p.price.toFixed(2));
+      }
+    });
+
+    document.getElementById('btn-empty').addEventListener('click',()=>{state.cart=[];renderCart()});
+
+    // orders
+    function renderOrders(){
+      const el=document.getElementById('orders'); el.innerHTML='';
+      if(!state.orders.length) el.innerHTML='<div style="color:var(--muted)">No orders yet.</div>';
+      state.orders.forEach(o=>{
+        const d=document.createElement('div'); d.className='order';
+        d.innerHTML = `<div><strong>Order #${o.id}</strong> — ${o.status}</div><div style="color:var(--muted);font-size:13px">Items: ${o.items.map(i=>i.name+' x'+i.qty).join(', ')}</div>`;
+        if(state.user && state.user.role==='admin'){
+          const actions=document.createElement('div'); actions.style.marginTop='8px';
+          const upd=document.createElement('button'); upd.className='btn btn-primary'; upd.textContent='Mark Shipped'; upd.addEventListener('click',()=>{o.status='Shipped';renderOrders()});
+          const cancel=document.createElement('button'); cancel.className='btn btn-ghost'; cancel.textContent='Cancel'; cancel.style.marginLeft='8px'; cancel.addEventListener('click',()=>{o.status='Canceled';renderOrders()});
+          actions.appendChild(upd); actions.appendChild(cancel); d.appendChild(actions);
         }
-        this.save();
-      }
-
-      save() {
-        localStorage.setItem('cart', JSON.stringify(this.items));
-      }
+        el.appendChild(d);
+      })
     }
 
-    class ProductList {
-      constructor() {
-        this.products = [
-          new Product(1, 'Soft Linen Sofa', 12000, 'https://images.unsplash.com/photo-1582582421332-4a6cbfdbb5f3', 'A cozy linen sofa that warms any living room.'),
-          new Product(2, 'Rustic Wooden Table', 8500, 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c', 'Solid wood table perfect for family gatherings.'),
-          new Product(3, 'Comfy Lounge Chair', 5600, 'https://images.unsplash.com/photo-1578898887932-57c46e58b7b8', 'Curl up with a book in this inviting chair.')
-        ];
-      }
+    document.getElementById('btn-checkout').addEventListener('click',()=>{
+      if(!state.user){ alert('Please login or register before checking out.'); return }
+      if(!state.cart.length){ alert('Cart is empty.'); return }
+      const id = Math.floor(Math.random()*90000)+10000;
+      const order = {id, user:state.user.email, status:'Pending', items: state.cart.map(c=>{const p=products.find(pp=>pp.id===c.id); return {id:p.id,name:p.name,qty:c.qty,price:p.price}})};
+      state.orders.push(order);
+      state.cart = [];
+      renderCart(); renderOrders(); alert('Order placed! Order #' + id);
+    });
 
-      render() {
-        const container = document.getElementById('product-list');
-        container.innerHTML = '';
-        this.products.forEach(p => {
-          const card = document.createElement('div');
-          card.className = 'card';
-          card.innerHTML = `
-            <img src="${p.image}" alt="${p.name}">
-            <h3>${p.name}</h3>
-            <p>${p.description}</p>
-            <p><strong>₱${p.price.toLocaleString()}</strong></p>
-            <button>Add to Cart</button>
-          `;
-          card.querySelector('button').addEventListener('click', () => {
-            cart.addProduct(p);
-            alert(`${p.name} added to cart!`);
-          });
-          container.appendChild(card);
-        });
+    // login / register modal (front-end simulation only)
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDo = document.getElementById('modal-do');
+    const modalMsg = document.getElementById('modal-msg');
+    let modalMode = 'login';
+
+    document.getElementById('btn-account').addEventListener('click',()=>{openModal('login')});
+    document.getElementById('modal-close').addEventListener('click',()=>{modal.style.display='none';modalMsg.textContent=''});
+    document.getElementById('switch-to-register').addEventListener('click',()=>{openModal(modalMode==='login'?'register':'login')});
+
+    function openModal(mode){ modalMode=mode; modal.style.display='flex'; modalTitle.textContent = mode==='login'?'Login':'Register'; modalDo.textContent = mode==='login'?'Login':'Register'; }
+
+    modalDo.addEventListener('click',()=>{
+      const email = document.getElementById('email').value.trim(); const pwd = document.getElementById('password').value.trim();
+      if(!email || !pwd){ modalMsg.textContent='Please enter email and password.'; return }
+      // simple mock "accounts"
+      if(modalMode==='register'){
+        // allow role simulation via select
+        const roleSel = document.getElementById('role-sim'); const role = roleSel.value || 'customer';
+        state.user = {email,role}; modalMsg.style.color='green'; modalMsg.textContent='Registered and logged in as '+role; setTimeout(()=>{modal.style.display='none';modalMsg.textContent='';updateView()},700);
+      } else {
+        // mock: accept any login; role follows role-sim select
+        const role = document.getElementById('role-sim').value || 'customer';
+        state.user = {email,role}; modalMsg.style.color='green'; modalMsg.textContent='Logged in as '+role; setTimeout(()=>{modal.style.display='none';modalMsg.textContent='';updateView()},700);
       }
+    });
+
+    document.getElementById('btn-orders').addEventListener('click',()=>{
+      alert('Orders panel is in the page. Scroll to "Order Management".');
+    });
+
+    // admin simulation: toggle admin controls
+    function updateView(){
+      document.getElementById('yr').textContent = new Date().getFullYear();
+      if(state.user){
+        document.getElementById('btn-account').textContent = state.user.email + ' • ' + state.user.role;
+        document.getElementById('admin-controls').style.display = state.user.role==='admin'? 'block' : 'none';
+      } else {
+        document.getElementById('btn-account').textContent = 'Login / Register';
+        document.getElementById('admin-controls').style.display = 'none';
+      }
+      renderOrders(); renderCart();
     }
 
-    const cart = new Cart();
-    const productList = new ProductList();
-    productList.render();
+    document.getElementById('role-sim').addEventListener('change',e=>{
+      // allow switching simulated role without logging out — for demo only
+      if(state.user){ state.user.role = e.target.value; updateView(); }
+      document.getElementById('admin-controls').style.display = e.target.value==='admin' ? 'block' : 'none';
+    });
+
+    // admin: add product (front-end only)
+    document.getElementById('btn-add-product').addEventListener('click',()=>{
+      if(!state.user || state.user.role!=='admin'){ alert('Only admins may add products (front-end demo).'); return }
+      const name = document.getElementById('new-name').value.trim(); const price = parseFloat(document.getElementById('new-price').value);
+      const cat = document.getElementById('new-cat').value;
+      if(!name || !price){ alert('Please supply name and price.'); return }
+      const id = products.length? Math.max(...products.map(p=>p.id))+1 : 1;
+      products.push({id,name,category:cat,price,desc:'(admin-added)'});
+      // update category lists
+      if(!categories.includes(cat)){
+        categories.push(cat); [categoryFilter,leftCategory].forEach(sel=>{ const o=document.createElement('option'); o.value=cat; o.textContent=cat; sel.appendChild(o) });
+      }
+      renderProducts(products); alert('Product added.');
+    });
+
+    // quick simulate: pre-populate some orders for demo
+    state.orders.push({id:10001,user:'test@example.com',status:'Pending',items:[{id:2,name:'Comfort Sofa (3-seater)',qty:1,price:449}]});
+
+    // init
+    updateView();
+    renderOrders();
+    renderCart();
   </script>
 </body>
 </html>
